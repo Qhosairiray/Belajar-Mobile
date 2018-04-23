@@ -1,0 +1,58 @@
+<!--
+  Generated template for the ArrayionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title *ngIf="ada">Hosari Dev</ion-title>
+  
+  <ion-buttons end>
+      <button ion-button icon-only (click)="muncul()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+  </ion-buttons>
+  <ion-searchbar  *ngIf="ada==false" (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> -->
+  <ion-list>
+    <ion-item *ngFor="let isidata of datanya; let i=index;">
+      <ion-avatar item-start>
+        <img *ngIf="isidata.jk=='Laki-laki'" src="assets/imgs/cowok.png">
+        <img *ngIf="isidata.jk=='Perempuan'" src="assets/imgs/cewek.png">
+      </ion-avatar>
+      <h2>{{isidata.nama}}</h2>
+      <p>{{isidata.jk}}</p>
+      <p>{{isidata.prodi}}</p>
+      <p *ngIf="isidata.nilai<60" style="color:red;">{{isidata.nilai}}</p>
+      <p *ngIf="isidata.nilai>=60" style="color: green;">{{isidata.nilai}} </p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+  <!-- <button ion-button clear (click)="tmpl()">Tampilkan</button>
+  <ion-list-header *ngIf="tampil">
+      Hosari Dev
+  </ion-list-header>
+  <! tabel-->  
+  <!-- <ion-grid *ngIf="tampil" >
+    
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list *ngIf="tampil">
+    <ion-item *ngFor="let isidata of datanya; let i=index;">
+        {{i+1}}  {{isidata.nama}} <label *ngIf="i==0">yess</label>
+    </ion-item>
+  </ion-list>  --> 
+
+
+
+
+<!-- tugas membuat tabel no, NIm, nama, nilai, prikat, status  -->
